@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import '../../App.css';
+import CollapsePanel from '../Collapse/CollapsePanel';
 import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, CheckSquareOutlined } from '@ant-design/icons';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, Menu, Tabs, theme, Typography } from 'antd';
 
 const HomePage = () => {
     const { Header, Sider, Content } = Layout;
+    const { Text } = Typography;
     const { token: { colorBgContainer } } = theme.useToken();
 
     // states management
     const [collapsed, setCollapsed] = useState(false);
+
+    const onChange = (key) => {
+        console.log(key);
+    };
 
     return (
         <>
@@ -43,7 +49,7 @@ const HomePage = () => {
                                 label: 'FORM_SIMPLE',
                             },
                             {
-                                key: '3',
+                                key: '4',
                                 icon: <CheckSquareOutlined />,
                                 label: 'FORM_WITH_Collapsable_under tab',
                             },
@@ -63,14 +69,47 @@ const HomePage = () => {
                         })}
                     </Header>
                     <Content
+                        className='border border-secondary'
                         style={{
                             margin: '24px 16px',
-                            padding: 24,
                             minHeight: 280,
+                            borderRadius: '10px',
                             background: colorBgContainer,
                         }}
                     >
-                        Content
+                        <Typography.Title
+                            className='w-100 text-center bg-dark'
+                            level={3}
+                            style={{
+                                margin: 0,
+                                'borderTopRightRadius': '10px',
+                                'borderTopLeftRadius': '10px',
+                            }}
+                        >
+                            <Text className="text-light bg-dark">Form Preview</Text>
+                        </Typography.Title>
+                        <Tabs
+                            className='p-2'
+                            defaultActiveKey="1"
+                            onChange={onChange}
+                            items={[
+                                {
+                                    label: `Company Details`,
+                                    key: '1',
+                                    children: <CollapsePanel />,
+                                },
+                                {
+                                    label: `Contact Details`,
+                                    key: '2',
+                                    children: `Content of Tab Pane 2`,
+                                },
+                                {
+                                    label: `Review`,
+                                    key: '3',
+                                    children: `Content of Tab Pane 3`,
+                                },
+                            ]}
+                        />
                     </Content>
                 </Layout>
             </Layout>
