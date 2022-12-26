@@ -8,11 +8,23 @@ body {
     min-height: 100vh
 }
 
-.trigger {
-    margin-left: 12px;
-}
-
 .fa-plug-circle-bolt {
     font-size: 45px;
     color: white;
+}
+
+/* css for vertical align tags icon */
+.ant-tag span {
+    overflow: hidden;
+    vertical-align: unset !important;
+}
+
+/* css for vertical align button icon */
+.ant-btn .anticon {
+    overflow: hidden;
+}
+
+.disableClass {
+    opacity: 0.6;
+    pointer-events: none;
 }

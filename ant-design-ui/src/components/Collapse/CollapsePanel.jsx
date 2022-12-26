@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Collapse, Row, Button, Form, Input, Select, DatePicker, Space, Table, Tag } from 'antd';
+import { SaveOutlined, ClearOutlined } from '@ant-design/icons';
 
 const CollapsePanel = () => {
     const { Panel } = Collapse;
@@ -201,7 +202,7 @@ const CollapsePanel = () => {
                                                 <Tag closable onClose={log}>
                                                     Gadgets
                                                 </Tag>
-                                                <Tag closable onClose={log}>
+                                                <Tag closable onClose={log} className='disableClass'>
                                                     Iphones
                                                 </Tag>
                                             </>
@@ -218,16 +219,23 @@ const CollapsePanel = () => {
                                     textAlign: 'right',
                                 }}
                             >
-                                <Button type="primary" htmlType="submit">
+                                <Button
+                                    type="primary"
+                                    htmlType="submit"
+                                    icon={<SaveOutlined />}
+                                    size={'large'}
+                                >
                                     Save
                                 </Button>
                                 <Button
+                                    icon={<ClearOutlined />}
                                     style={{
                                         margin: '0 8px',
                                     }}
                                     onClick={() => {
                                         form.resetFields();
                                     }}
+                                    size={'large'}
                                 >
                                     Clear
                                 </Button>

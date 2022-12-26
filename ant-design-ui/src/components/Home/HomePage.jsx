@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import '../../App.css';
 import CollapsePanel from '../Collapse/CollapsePanel';
-import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, CheckSquareOutlined } from '@ant-design/icons';
-import { Layout, Menu, Tabs, theme, Typography } from 'antd';
+import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, PieChartOutlined, VideoCameraOutlined, CheckSquareOutlined } from '@ant-design/icons';
+import { Avatar, Layout, Menu, Tabs, theme, Typography } from 'antd';
+import { Footer } from 'antd/es/layout/layout';
 
 const HomePage = () => {
+    const today = new Date();
     const { Header, Sider, Content } = Layout;
     const { Text } = Typography;
     const { token: { colorBgContainer } } = theme.useToken();
@@ -21,12 +23,25 @@ const HomePage = () => {
             <Layout className='main'>
                 <Sider trigger={null} collapsible collapsed={collapsed}>
                     <div
+                        className='text-center'
                         style={{
                             height: 32,
                             margin: 16,
-                            background: 'rgba(255, 255, 255, 0.2)',
+                            // background: 'rgba(255, 255, 255, 0.2)',
                         }}
                     >
+                        {collapsed ?
+                            <div >
+                                <Avatar
+                                    className='justify-content-center img-fluid'
+                                    src={require('../../assets/img/manager.png')}
+                                />
+                            </div>
+                            :
+                            <div className='h5 text-muted text-uppercase font-weight-bold text-center'>
+                                DASHBOARD
+                            </div>
+                        }
                     </div>
                     <Menu
                         theme="dark"
@@ -35,7 +50,7 @@ const HomePage = () => {
                         items={[
                             {
                                 key: '1',
-                                icon: <UserOutlined />,
+                                icon: <PieChartOutlined />,
                                 label: 'FORM_WITH_TAB_PANEL',
                             },
                             {
@@ -63,10 +78,14 @@ const HomePage = () => {
                             background: colorBgContainer,
                         }}
                     >
-                        {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                            className: 'trigger',
-                            onClick: () => setCollapsed(!collapsed),
-                        })}
+                        <div
+                            className='ml-3'
+                            onClick={() => setCollapsed(!collapsed)}
+                            style={{ fontSize: '20px' }}
+                        >
+                            {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                            {/* <Avatar className='mt-4 mr-4' style={{ float: 'right' }} src="https://cdn.pixabay.com/photo/2013/07/13/10/44/man-157699_1280.png" /> */}
+                        </div>
                     </Header>
                     <Content
                         className='border border-secondary'
@@ -111,6 +130,7 @@ const HomePage = () => {
                             ]}
                         />
                     </Content>
+                    <Footer style={{ textAlign: 'center' }}>Ant Design ©{today.getFullYear()} Created by Ant UED</Footer>
                 </Layout>
             </Layout>
         </>
