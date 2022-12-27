@@ -1,8 +1,8 @@
 import { Collapse } from 'antd'
 import React from 'react'
-import TabPanel from '../components/TabPanel';
+import TabPanel from './TabPanel';
 
-const CollapseablePanel = () => {
+const CollapseAblePanel = () => {
 
     const { Panel } = Collapse;
 
@@ -123,7 +123,7 @@ const CollapseablePanel = () => {
     ]
 
     const onChange = (key) => {
-        console.log('CollapseablePanel key ::', key);
+        console.log('CollapseAblePanel key ::', key);
     };
 
     return (
@@ -157,4 +157,4 @@ const CollapseablePanel = () => {
     )
 }
 
-export default CollapseablePanel
+export default CollapseAblePanel

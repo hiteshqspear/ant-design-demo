@@ -1,11 +1,11 @@
 import React from 'react'
-import CollapseablePanel from '../../components/CollapseablePanel'
+import CollapseAblePanel from '../../components/CollapseAblePanel'
 
 const FormType4 = () => {
   return (
     <>
       <div className='m-3'>
-        <CollapseablePanel />
+        <CollapseAblePanel />
       </div>
     </>
   )
