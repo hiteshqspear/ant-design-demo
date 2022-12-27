@@ -17,14 +17,14 @@ const CollapsePanel = () => {
         {
             id: '0',
             type: 'input',
-            name: 'Company Name',
+            // name: 'CompanyName',
             label: 'Company Name',
             placeholder: 'Type your company name'
         },
         {
             id: '1',
             type: 'select',
-            name: 'City',
+            // name: 'City',
             label: 'City',
             items: [
                 {
@@ -48,13 +48,13 @@ const CollapsePanel = () => {
         {
             id: '2',
             type: 'date',
-            name: 'Registration Date',
+            // name: 'RegistrationDate',
             label: 'Registration Date',
         },
         {
             id: '3',
             type: 'input_tags',
-            name: 'Category',
+            // name: 'Category',
             label: 'Category',
         }
     ];
@@ -153,7 +153,7 @@ const CollapsePanel = () => {
             <Collapse
                 defaultActiveKey={['1']}
                 style={{
-                    borderRadius: '0',
+                    borderRadius: '10px',
                 }}
                 onChange={onChange}>
                 <Panel
