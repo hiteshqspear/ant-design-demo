@@ -3,7 +3,7 @@ import { Col, Row, Button, Form, Input, Select, DatePicker, Table, Tag } from 'a
 import { SaveOutlined, ClearOutlined } from '@ant-design/icons';
 
 const FormPanel = (props) => {
-    let { formData } = props;
+    let { formPanelData } = props;
     const [form] = Form.useForm();
 
     let formElmTypes = ['input', 'select', 'datepicker', 'multiselect'];
@@ -22,7 +22,7 @@ const FormPanel = (props) => {
 
     const FormInside = () => {
         // filter input types according to our needs //
-        let newFormData = formData?.filter((el) => formElmTypes?.includes(el?.type));
+        let newFormData = formPanelData?.filter((el) => formElmTypes?.includes(el?.type));
 
         return newFormData && newFormData?.map((item, index) => {
             return <React.Fragment key={index}>
@@ -63,7 +63,7 @@ const FormPanel = (props) => {
 
     const TableInside = () => {
         // filter input types according to our needs //
-        let newFormData = formData?.filter((el) => el?.type === 'table');
+        let newFormData = formPanelData?.filter((el) => el?.type === 'table');
 
         return newFormData && newFormData?.map((item) => {
             let keys = item?.columns?.map(i => i?.id);

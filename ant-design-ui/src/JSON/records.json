@@ -239,7 +239,9 @@
                 "readOnly": false,
                 "label": "Company Name",
                 "title": "Company Name",
-                "attribute": "companyName"
+                "attribute": "companyName",
+                "placeholder": "Type your company name",
+                "errorMsg": "Please input your company name!"
             },
             {
                 "elementId": 4,
@@ -251,14 +253,23 @@
                 "attribute": "companyCity",
                 "items": [
                     {
-                        "id": 1,
+                        "id": 0,
                         "value": "Delhi"
                     },
                     {
+                        "id": 1,
+                        "value": "Punjab"
+                    },
+                    {
                         "id": 2,
-                        "value": "Delhi"
+                        "value": "Haryana"
+                    },
+                    {
+                        "id": 3,
+                        "value": "Himachal pradesh"
                     }
-                ]
+                ],
+                "errorMsg": "Please input your City!"
             },
             {
                 "elementId": 5,
@@ -267,7 +278,8 @@
                 "readOnly": false,
                 "label": "Registration Date",
                 "title": "Select Date",
-                "attribute": "registrationDate"
+                "attribute": "registrationDate",
+                "errorMsg": "Please select Date!"
             },
             {
                 "elementId": 6,
@@ -279,32 +291,84 @@
                 "attribute": "category",
                 "url": "https://xyz.com/lookup/category",
                 "id": "categorId",
-                "value": "categoryName"
+                "value": "categoryName",
+                "errorMsg": "Please Select Category!",
+                "data": [
+                    {
+                        "categorId": 1,
+                        "categoryName": "Fashion",
+                        "disable": false
+                    },
+                    {
+                        "categorId": 2,
+                        "categoryName": "Mobiles",
+                        "disable": false
+                    },
+                    {
+                        "categorId": 3,
+                        "categoryName": "Books",
+                        "disable": false
+                    },
+                    {
+                        "categorId": 4,
+                        "categoryName": "Groceries",
+                        "disable": false
+                    },
+                    {
+                        "categorId": 5,
+                        "categoryName": "Jewelry",
+                        "disable": true
+                    }
+                ]
             },
             {
                 "elementId": 7,
                 "type": "table",
                 "required": false,
                 "readOnly": false,
-                "Columns": [
+                "columns": [
                     {
-                        "id": "title",
-                        "title": "Title"
+                        "id": 1,
+                        "title": "Title",
+                        "dataIndex": "title",
+                        "key": "title"
                     },
                     {
-                        "id": "status",
-                        "title": "Status"
+                        "id": 2,
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "key": "status"
                     },
                     {
-                        "id": "time",
-                        "title": "Time"
+                        "id": 3,
+                        "title": "Time",
+                        "dataIndex": "time",
+                        "key": "time"
                     },
                     {
-                        "id": "category",
-                        "title": "Category"
+                        "id": 4,
+                        "title": "Category",
+                        "dataIndex": "category",
+                        "key": "category"
                     }
                 ],
-                "url": "https://xyz.com/table"
+                "url": "https://xyz.com/table",
+                "data": [
+                    {
+                        "key": 1,
+                        "title": "one",
+                        "status": "two",
+                        "time": "2022-12-11",
+                        "category": "one,two"
+                    },
+                    {
+                        "key": 2,
+                        "title": "one1",
+                        "status": "two1",
+                        "time": "2022-12-12",
+                        "category": "one,two,three"
+                    }
+                ]
             }
         ]
     },

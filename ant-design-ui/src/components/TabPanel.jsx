@@ -10,7 +10,7 @@ const TabPanel = (props) => {
 
     const handleTabChild = (tabElementArr) => {
         if (tabElementArr?.elements) {
-            return <><FormPanel formData={tabElementArr?.elements} /></>
+            return <><FormPanel formPanelData={tabElementArr?.elements} /></>
         }
     }
 
