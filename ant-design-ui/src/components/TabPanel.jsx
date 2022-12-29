@@ -1,20 +1,17 @@
 import { Tabs } from 'antd'
 import React from 'react'
 import { isObject } from '../_helperFunctions/validationHelper';
+import FormPanel from './FormPanel';
 
 const TabPanel = (props) => {
     const { tabContentArr } = props;
 
     console.log('TabPanel tabContentArr', props);
 
-    const handleTabChild = (tabElement) => {
-        console.log('tabElement ::', tabElement);
-
-        if (tabElement?.elements) {
-            return <>nothing</>
+    const handleTabChild = (tabElementArr) => {
+        if (tabElementArr?.elements) {
+            return <><FormPanel formData={tabElementArr?.elements} /></>
         }
-
-        return `Content of Tab Panel ${tabElement?.itemId}`;
     }
 
     const onChange = (key) => {
