@@ -55,6 +55,7 @@ const FormPanel = (props) => {
                                 </Tag>
                             })
                         )}
+
                     </Form.Item>
                 </Col>
             </React.Fragment>
@@ -77,48 +78,50 @@ const FormPanel = (props) => {
 
     return (
         <>
-            <Form
-                form={form}
-                name="advanced_search"
-                className="ant-advanced-search-form"
-                onFinish={onFinish}
-            >
-                <Row gutter={24}>
-                    <FormInside />
-                </Row>
+            {formPanelData && (
+                <Form
+                    form={form}
+                    name="advanced_search"
+                    className="ant-advanced-search-form"
+                    onFinish={onFinish}
+                >
+                    <Row gutter={24}>
+                        <FormInside />
+                    </Row>
 
-                <TableInside />
+                    <TableInside />
 
-                <Row>
-                    <Col
-                        span={24}
-                        style={{
-                            textAlign: 'right',
-                        }}
-                    >
-                        <Button
-                            type="primary"
-                            htmlType="submit"
-                            icon={<SaveOutlined />}
-                            size={'large'}
-                        >
-                            Save
-                        </Button>
-                        <Button
-                            icon={<ClearOutlined />}
+                    <Row>
+                        <Col
+                            span={24}
                             style={{
-                                margin: '0 8px',
+                                textAlign: 'right',
                             }}
-                            onClick={() => {
-                                form.resetFields();
-                            }}
-                            size={'large'}
                         >
-                            Clear
-                        </Button>
-                    </Col>
-                </Row>
-            </Form>
+                            <Button
+                                type="primary"
+                                htmlType="submit"
+                                icon={<SaveOutlined />}
+                                size={'large'}
+                            >
+                                Save
+                            </Button>
+                            <Button
+                                icon={<ClearOutlined />}
+                                style={{
+                                    margin: '0 8px',
+                                }}
+                                onClick={() => {
+                                    form.resetFields();
+                                }}
+                                size={'large'}
+                            >
+                                Clear
+                            </Button>
+                        </Col>
+                    </Row>
+                </Form>
+            )}
         </>
     )
 }

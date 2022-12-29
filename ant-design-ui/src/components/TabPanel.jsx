@@ -6,8 +6,6 @@ import FormPanel from './FormPanel';
 const TabPanel = (props) => {
     const { tabContentArr } = props;
 
-    console.log('TabPanel tabContentArr', props);
-
     const handleTabChild = (tabElementArr) => {
         if (tabElementArr?.elements) {
             return <><FormPanel formPanelData={tabElementArr?.elements} /></>

@@ -1,42 +1,59 @@
 import React from 'react';
 import { Collapse } from 'antd';
 import TabPanel from './TabPanel';
+import FormPanel from './FormPanel';
 
 const CollapseAblePanel = (props) => {
     const { collapseAblePanelData } = props;
     const { Panel } = Collapse;
+    let formElmTypes = ['input', 'select', 'datepicker', 'multiselect'];
 
     const onChange = (key) => {
         console.log('CollapseAblePanel key ::', key);
     };
 
-    return (
-        <>
+    const HandlePanel = () => {
+        let panelType;
+        return <>
             <Collapse
                 defaultActiveKey={['1']}
                 style={{
                     borderRadius: '10px',
                 }}
-                onChange={onChange}>
-
+                onChange={onChange}
+            >
                 {collapseAblePanelData && collapseAblePanelData?.map((elm, eIndex) => {
+                    if (elm && elm?.elements) {
+                        if (elm?.elements?.find(i => formElmTypes?.includes(i?.type))) {
+                            panelType = 'FormPanel';
+                        } if (elm?.elements?.find(i => i?.type === 'TabPanel')) {
+                            panelType = 'TabPanel';
+                        }
+                    }
+
                     return (
                         <Panel header={elm?.title} key={elm?.key}>
-                            {
-                                elm?.elements && elm?.elements?.map((val, vIndex) => {
-                                    return (
-                                        val?.type && val?.type === 'TabPanel' && (
-                                            <React.Fragment key={vIndex}>
-                                                <TabPanel tabContentArr={val?.items} />
-                                            </React.Fragment>
-                                        )
-                                    )
-                                })
-                            }
+                            {panelType === 'FormPanel' && <FormPanel formPanelData={elm?.elements} />}
+                            {elm?.elements && elm?.elements?.map((val, vIndex) => {
+                                if (panelType === 'TabPanel') {
+                                    return <React.Fragment key={vIndex}>
+                                        <TabPanel tabContentArr={val?.items} />
+                                    </React.Fragment>
+                                } else {
+                                    return null;
+                                }
+                            })}
                         </Panel>
                     );
                 })}
             </Collapse>
+        </>
+    }
+
+    return (
+        <>
+            {/* this function handles collapsePanel data */}
+            <HandlePanel />
         </>
     )
 }
