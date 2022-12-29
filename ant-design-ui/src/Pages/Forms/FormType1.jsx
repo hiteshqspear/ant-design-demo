@@ -1,8 +1,10 @@
 import React from 'react';
 import CollapsePanel from '../../components/Collapse/CollapsePanel';
 import { Tabs } from 'antd';
+import TabPanel from '../../components/TabPanel';
 
-const FormType1 = () => {
+const FormType1 = (props) => {
+    const { formData } = props;
 
     const onChange = (key) => {
         console.log('FormType1 onChange', key);
@@ -10,7 +12,15 @@ const FormType1 = () => {
 
     return (
         <>
-            <Tabs
+            {formData && formData?.map((el, eIndex) => {
+                return (el?.type === 'TabPanel' &&
+                    <React.Fragment key={eIndex}>
+                        <div className='p-2'>
+                            <TabPanel tabContentArr={el?.items} key={eIndex} />
+                        </div>
+                    </React.Fragment>)
+            })}
+            {/* <Tabs
                 className='p-2'
                 defaultActiveKey="1"
                 onChange={onChange}
@@ -31,7 +41,7 @@ const FormType1 = () => {
                         children: `Content of Tab Pane 3`,
                     },
                 ]}
-            />
+            /> */}
         </>
     )
 }
