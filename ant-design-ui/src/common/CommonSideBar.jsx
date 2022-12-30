@@ -1,8 +1,8 @@
 import React from 'react';
 import { UploadOutlined, PieChartOutlined, VideoCameraOutlined, CheckSquareOutlined } from '@ant-design/icons';
-import { Avatar, Layout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import { useNavigate } from 'react-router';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const menuContent = [
     {
@@ -51,10 +51,10 @@ const CommonSideBar = (props) => {
                     style={{
                         height: 32,
                         margin: 16,
-                        // background: 'rgba(255, 255, 255, 0.2)',
+                        background: 'rgba(255, 255, 255, 0.2)',
                     }}
                 >
-                    {collapsed ?
+                    {/* {collapsed ?
                         <Link to={'/'}>
                             <Avatar
                                 className='justify-content-center img-fluid'
@@ -62,10 +62,10 @@ const CommonSideBar = (props) => {
                             />
                         </Link>
                         :
-                        <Link to={'/'} className='h5 text-muted text-uppercase font-weight-bold text-center text-decoration-none'>
+                        <Link to={'/'} className='h5 text-uppercase font-weight-bold text-center'>
                             DASHBOARD
                         </Link>
-                    }
+                    } */}
                 </div>
                 <Menu
                     theme="dark"

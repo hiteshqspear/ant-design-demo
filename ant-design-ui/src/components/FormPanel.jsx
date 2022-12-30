@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Row, Button, Form, Input, Select, DatePicker, Table, Tag } from 'antd';
+import { Col, Row, Button, Form, Input, Select, DatePicker, Table } from 'antd';
 import { SaveOutlined, ClearOutlined } from '@ant-design/icons';
 
 const FormPanel = (props) => {
@@ -7,10 +7,6 @@ const FormPanel = (props) => {
     const [form] = Form.useForm();
 
     let formElmTypes = ['input', 'select', 'datepicker', 'multiselect'];
-
-    const log = (e) => {
-        console.log(e);
-    };
 
     const handleChange = () => {
         form.setFieldsValue({ sights: [] });
@@ -42,18 +38,13 @@ const FormPanel = (props) => {
                             <Input placeholder={`${item?.placeholder}`} />
                         )}
                         {item?.type === 'select' && (
-                            <Select options={item?.items} onChange={handleChange} defaultValue="Select City">
-                            </Select>
+                            <Select mode='single' options={item?.items} onChange={handleChange} defaultValue="Select City" />
                         )}
                         {item?.type === 'datepicker' && (
                             <DatePicker />
                         )}
-                        {item?.type === 'multiselect' && item?.data && (
-                            item?.data?.map((tabs, tabIndex) => {
-                                return <Tag closable onClose={log} key={tabIndex} className={`${tabs?.disable && 'disableClass'}`}>
-                                    {tabs?.categoryName}
-                                </Tag>
-                            })
+                        {item?.type === 'multiselect' && (
+                            <Select mode='multiple' options={item?.items} onChange={handleChange} defaultValue={item?.items[0]} />
                         )}
 
                     </Form.Item>

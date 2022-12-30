@@ -4,8 +4,9 @@ import { Layout } from 'antd';
 import CommonFooter from '../../common/CommonFooter';
 import CommonHeader from '../../common/CommonHeader';
 import CommonSideBar from '../../common/CommonSideBar';
+import CommonBody from '../../common/CommonBody';
 
-const HomePage = () => {
+const FormPreview = () => {
     // states management
     const [collapsed, setCollapsed] = useState(false);
 
@@ -18,19 +19,7 @@ const HomePage = () => {
                     {/*********** common Header ********/}
                     <CommonHeader setCollapsed={setCollapsed} collapsed={collapsed} />
                     {/*********** common body ********/}
-
-                    <main id="main" className="main m-3">
-                        <div className="pagetitle">
-                            <h1>Dashboard</h1>
-                            <nav>
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li className="breadcrumb-item active">Dashboard</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </main>
-
+                    <CommonBody />
                     {/*********** common footer ********/}
                     <CommonFooter />
                 </Layout>
@@ -39,4 +28,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default FormPreview

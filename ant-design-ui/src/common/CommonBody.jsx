@@ -17,7 +17,7 @@ const CommonBody = () => {
     const HandleForms = () => {
         return records && records?.map((elm, eIndex) => {
 
-            if ((!formName || formName === 'FORM_WITH_TAB_PANEL') && elm?.formName === 'FORM_WITH_TAB_PANEL') {
+            if (formName === 'FORM_WITH_TAB_PANEL' && elm?.formName === 'FORM_WITH_TAB_PANEL') {
                 return <FormType1 formData={elm?.elements} key={eIndex} />
             } if (formName === 'FORM_WITH_COLLAPSABLE' && elm?.formName === 'FORM_WITH_COLLAPSABLE') {
                 return <FormType2 formData={elm?.elements} key={eIndex} />

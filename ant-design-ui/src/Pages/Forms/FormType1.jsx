@@ -1,14 +1,14 @@
 import React from 'react';
-import CollapsePanel from '../../components/Collapse/CollapsePanel';
-import { Tabs } from 'antd';
+// import CollapsePanel from '../../components/Collapse/CollapsePanel';
+// import { Tabs } from 'antd';
 import TabPanel from '../../components/TabPanel';
 
 const FormType1 = (props) => {
     const { formData } = props;
 
-    const onChange = (key) => {
-        console.log('FormType1 onChange', key);
-    };
+    // const onChange = (key) => {
+    //     console.log('FormType1 onChange', key);
+    // };
 
     return (
         <>

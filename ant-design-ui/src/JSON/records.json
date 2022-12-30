@@ -84,30 +84,30 @@
                                                 "id": "categorId",
                                                 "value": "categoryName",
                                                 "errorMsg": "Please Select Category!",
-                                                "data": [
+                                                "items": [
                                                     {
-                                                        "categorId": 1,
-                                                        "categoryName": "Fashion",
+                                                        "id": 1,
+                                                        "value": "Fashion",
                                                         "disable": false
                                                     },
                                                     {
-                                                        "categorId": 2,
-                                                        "categoryName": "Mobiles",
+                                                        "id": 2,
+                                                        "value": "Mobiles",
                                                         "disable": false
                                                     },
                                                     {
-                                                        "categorId": 3,
-                                                        "categoryName": "Books",
+                                                        "id": 3,
+                                                        "value": "Books",
                                                         "disable": false
                                                     },
                                                     {
-                                                        "categorId": 4,
-                                                        "categoryName": "Groceries",
+                                                        "id": 4,
+                                                        "value": "Groceries",
                                                         "disable": false
                                                     },
                                                     {
-                                                        "categorId": 5,
-                                                        "categoryName": "Jewelry",
+                                                        "id": 5,
+                                                        "value": "Jewelry",
                                                         "disable": true
                                                     }
                                                 ]
@@ -263,30 +263,30 @@
                                 "id": "categorId",
                                 "value": "categoryName",
                                 "errorMsg": "Please Select Category!",
-                                "data": [
+                                "items": [
                                     {
-                                        "categorId": 1,
-                                        "categoryName": "Fashion",
+                                        "id": 1,
+                                        "value": "Fashion",
                                         "disable": false
                                     },
                                     {
-                                        "categorId": 2,
-                                        "categoryName": "Mobiles",
+                                        "id": 2,
+                                        "value": "Mobiles",
                                         "disable": false
                                     },
                                     {
-                                        "categorId": 3,
-                                        "categoryName": "Books",
+                                        "id": 3,
+                                        "value": "Books",
                                         "disable": false
                                     },
                                     {
-                                        "categorId": 4,
-                                        "categoryName": "Groceries",
+                                        "id": 4,
+                                        "value": "Groceries",
                                         "disable": false
                                     },
                                     {
-                                        "categorId": 5,
-                                        "categoryName": "Jewelry",
+                                        "id": 5,
+                                        "value": "Jewelry",
                                         "disable": true
                                     }
                                 ]
@@ -423,30 +423,30 @@
                 "id": "categorId",
                 "value": "categoryName",
                 "errorMsg": "Please Select Category!",
-                "data": [
+                "items": [
                     {
-                        "categorId": 1,
-                        "categoryName": "Fashion",
+                        "id": 1,
+                        "value": "Fashion",
                         "disable": false
                     },
                     {
-                        "categorId": 2,
-                        "categoryName": "Mobiles",
+                        "id": 2,
+                        "value": "Mobiles",
                         "disable": false
                     },
                     {
-                        "categorId": 3,
-                        "categoryName": "Books",
+                        "id": 3,
+                        "value": "Books",
                         "disable": false
                     },
                     {
-                        "categorId": 4,
-                        "categoryName": "Groceries",
+                        "id": 4,
+                        "value": "Groceries",
                         "disable": false
                     },
                     {
-                        "categorId": 5,
-                        "categoryName": "Jewelry",
+                        "id": 5,
+                        "value": "Jewelry",
                         "disable": true
                     }
                 ]
@@ -587,30 +587,30 @@
                                                 "id": "categorId",
                                                 "value": "categoryName",
                                                 "errorMsg": "Please Select Category!",
-                                                "data": [
+                                                "items": [
                                                     {
-                                                        "categorId": 1,
-                                                        "categoryName": "Fashion",
+                                                        "id": 1,
+                                                        "value": "Fashion",
                                                         "disable": false
                                                     },
                                                     {
-                                                        "categorId": 2,
-                                                        "categoryName": "Mobiles",
+                                                        "id": 2,
+                                                        "value": "Mobiles",
                                                         "disable": false
                                                     },
                                                     {
-                                                        "categorId": 3,
-                                                        "categoryName": "Books",
+                                                        "id": 3,
+                                                        "value": "Books",
                                                         "disable": false
                                                     },
                                                     {
-                                                        "categorId": 4,
-                                                        "categoryName": "Groceries",
+                                                        "id": 4,
+                                                        "value": "Groceries",
                                                         "disable": false
                                                     },
                                                     {
-                                                        "categorId": 5,
-                                                        "categoryName": "Jewelry",
+                                                        "id": 5,
+                                                        "value": "Jewelry",
                                                         "disable": true
                                                     }
                                                 ]
