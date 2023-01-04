@@ -9,6 +9,7 @@ const CommonForm = (props) => {
 
     const SeperateData = () => {
         if (formData) {
+            /////////////////////////// Call FormPanel Start ////////////////////////////
             let callFormPanel = formData?.find((el) => formElmTypes?.includes(el?.type));
 
             if (callFormPanel) {
@@ -20,7 +21,9 @@ const CommonForm = (props) => {
                     </React.Fragment>
                 )
             }
+            /////////////////////////// Call FormPanel End ////////////////////////////
 
+            ////////////////// Call TabPanel,CollapsePanel Start //////////////////////
             return formData && formData?.map((element, eIndex) => {
                 if (element?.type === "TabPanel") {
                     return (
@@ -42,6 +45,7 @@ const CommonForm = (props) => {
                     return null;
                 }
             })
+            /////////////////// Call TabPanel,CollapsePanel end ///////////////////////
         } else {
             return null;
         }
