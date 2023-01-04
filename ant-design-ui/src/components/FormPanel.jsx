@@ -21,35 +21,37 @@ const FormPanel = (props) => {
         let newFormData = formPanelData?.filter((el) => formElmTypes?.includes(el?.type));
 
         return newFormData && newFormData?.map((item, index) => {
-            return <React.Fragment key={index}>
-                <Col span={12} key={index}>
-                    <Form.Item
-                        name={`${item?.attribute}`}
-                        label={`${item?.label}`}
-                        rules={[
-                            {
-                                required: item?.required,
-                                message: item?.errorMsg
-                            },
-                            { whitespace: true }
-                        ]}
-                    >
-                        {item?.type === 'input' && (
-                            <Input placeholder={`${item?.placeholder}`} />
-                        )}
-                        {item?.type === 'select' && (
-                            <Select mode='single' options={item?.items} onChange={handleChange} defaultValue="Select City" />
-                        )}
-                        {item?.type === 'datepicker' && (
-                            <DatePicker />
-                        )}
-                        {item?.type === 'multiselect' && (
-                            <Select mode='multiple' options={item?.items} onChange={handleChange} defaultValue={item?.items[0]} />
-                        )}
+            return (
+                <React.Fragment key={index}>
+                    <Col span={12} key={index}>
+                        <Form.Item
+                            name={`${item?.attribute}`}
+                            label={`${item?.label}`}
+                            rules={[
+                                {
+                                    required: item?.required,
+                                    message: item?.errorMsg
+                                },
+                                { whitespace: true }
+                            ]}
+                        >
+                            {item?.type === 'input' && (
+                                <Input placeholder={`${item?.placeholder}`} />
+                            )}
+                            {item?.type === 'select' && (
+                                <Select mode='single' options={item?.items} onChange={handleChange} defaultValue="Select City" />
+                            )}
+                            {item?.type === 'datepicker' && (
+                                <DatePicker />
+                            )}
+                            {item?.type === 'multiselect' && (
+                                <Select mode='multiple' options={item?.items} onChange={handleChange} defaultValue={item?.items[0]} />
+                            )}
 
-                    </Form.Item>
-                </Col>
-            </React.Fragment>
+                        </Form.Item>
+                    </Col>
+                </React.Fragment>
+            )
         })
     }
 
@@ -60,9 +62,11 @@ const FormPanel = (props) => {
         return newFormData && newFormData?.map((item) => {
             let keys = item?.columns?.map(i => i?.id);
 
-            return <React.Fragment key={keys}>
-                <Table columns={item?.columns} dataSource={item?.data} className='mt-2 mb-3' />
-            </React.Fragment>
+            return (
+                <React.Fragment key={keys}>
+                    <Table columns={item?.columns} dataSource={item?.data} className='mt-2 mb-3' />
+                </React.Fragment>
+            )
         })
 
     }
@@ -70,48 +74,50 @@ const FormPanel = (props) => {
     return (
         <>
             {formPanelData && (
-                <Form
-                    form={form}
-                    name="advanced_search"
-                    className="ant-advanced-search-form"
-                    onFinish={onFinish}
-                >
-                    <Row gutter={24}>
-                        <FormInside />
-                    </Row>
+                <>
+                    <Form
+                        form={form}
+                        name="advanced_search"
+                        className="ant-advanced-search-form"
+                        onFinish={onFinish}
+                    >
+                        <Row gutter={24}>
+                            <FormInside />
+                        </Row>
 
-                    <TableInside />
+                        <TableInside />
 
-                    <Row>
-                        <Col
-                            span={24}
-                            style={{
-                                textAlign: 'right',
-                            }}
-                        >
-                            <Button
-                                type="primary"
-                                htmlType="submit"
-                                icon={<SaveOutlined />}
-                                size={'large'}
-                            >
-                                Save
-                            </Button>
-                            <Button
-                                icon={<ClearOutlined />}
+                        <Row>
+                            <Col
+                                span={24}
                                 style={{
-                                    margin: '0 8px',
+                                    textAlign: 'right',
                                 }}
-                                onClick={() => {
-                                    form.resetFields();
-                                }}
-                                size={'large'}
                             >
-                                Clear
-                            </Button>
-                        </Col>
-                    </Row>
-                </Form>
+                                <Button
+                                    type="primary"
+                                    htmlType="submit"
+                                    icon={<SaveOutlined />}
+                                    size={'large'}
+                                >
+                                    Save
+                                </Button>
+                                <Button
+                                    icon={<ClearOutlined />}
+                                    style={{
+                                        margin: '0 8px',
+                                    }}
+                                    onClick={() => {
+                                        form.resetFields();
+                                    }}
+                                    size={'large'}
+                                >
+                                    Clear
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Form>
+                </>
             )}
         </>
     )

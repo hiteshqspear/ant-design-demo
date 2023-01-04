@@ -28,3 +28,7 @@ body {
     opacity: 0.6;
     pointer-events: none;
 }
+
+.border-3 {
+    border-width: 2px !important;
+}

@@ -8,26 +8,26 @@ const menuContent = [
     {
         key: '1',
         icon: <PieChartOutlined />,
-        label: 'FORM_WITH_TAB_PANEL',
-        path: '/FORM_WITH_TAB_PANEL',
+        label: 'Home',
+        path: '/Home',
     },
     {
         key: '2',
         icon: <VideoCameraOutlined />,
-        label: 'FORM_WITH_COLLAPSABLE',
-        path: '/FORM_WITH_COLLAPSABLE',
+        label: 'Category',
+        path: '/Category',
     },
     {
         key: '3',
         icon: <UploadOutlined />,
-        label: 'FORM_SIMPLE',
-        path: '/FORM_SIMPLE',
+        label: 'About',
+        path: '/About',
     },
     {
         key: '4',
         icon: <CheckSquareOutlined />,
-        label: 'FORM_WITH_COLLAPSABLE_UNDER_TAB',
-        path: '/FORM_WITH_COLLAPSABLE_UNDER_TAB',
+        label: 'Login',
+        path: '/Login',
     },
 ];
 

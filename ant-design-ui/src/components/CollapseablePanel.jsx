@@ -5,7 +5,6 @@ import FormPanel from './FormPanel';
 
 const CollapseAblePanel = (props) => {
     const { collapseAblePanelData } = props;
-    console.log('collapseAblePanelData ::', collapseAblePanelData)
     const { Panel } = Collapse;
     let formElmTypes = ['input', 'select', 'datepicker', 'multiselect'];
 

@@ -4,7 +4,7 @@ import CommonFooter from '../../common/CommonFooter';
 import CommonHeader from '../../common/CommonHeader';
 import CommonSideBar from '../../common/CommonSideBar';
 
-const HomePage = () => {
+const Category = () => {
     // states management
     const [collapsed, setCollapsed] = useState(false);
 
@@ -20,11 +20,11 @@ const HomePage = () => {
 
                     <main id="main" className="main m-3">
                         <div className="pagetitle">
-                            <h1>Dashboard</h1>
+                            <h1>Category</h1>
                             <nav>
                                 <ol className="breadcrumb">
                                     <li className="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li className="breadcrumb-item active">Dashboard</li>
+                                    <li className="breadcrumb-item active">Category</li>
                                 </ol>
                             </nav>
                         </div>
@@ -38,4 +38,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default Category
