@@ -691,5 +691,172 @@
                 ]
             }
         ]
+    },
+    {
+        "formId": 5,
+        "formName": "FORM_UNDER_TAB_PANEL",
+        "title": "Form Preview",
+        "elements": [
+            {
+                "elementId": 1,
+                "type": "TabPanel",
+                "items": [
+                    {
+                        "itemId": 1,
+                        "title": "Company Details",
+                        "active": true,
+                        "elements": [
+                            {
+                                "elementId": 3,
+                                "type": "input",
+                                "maxLength": 100,
+                                "required": true,
+                                "readOnly": false,
+                                "label": "Company Name",
+                                "title": "Company Name",
+                                "attribute": "companyName",
+                                "placeholder": "Type your company name",
+                                "errorMsg": "Please input your company name!"
+                            },
+                            {
+                                "elementId": 4,
+                                "type": "select",
+                                "required": false,
+                                "readOnly": false,
+                                "label": "City",
+                                "title": "Please Select",
+                                "attribute": "companyCity",
+                                "items": [
+                                    {
+                                        "id": 0,
+                                        "value": "Delhi"
+                                    },
+                                    {
+                                        "id": 1,
+                                        "value": "Punjab"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "value": "Haryana"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "value": "Himachal pradesh"
+                                    }
+                                ],
+                                "errorMsg": "Please input your City!"
+                            },
+                            {
+                                "elementId": 5,
+                                "type": "datepicker",
+                                "required": false,
+                                "readOnly": false,
+                                "label": "Registration Date",
+                                "title": "Select Date",
+                                "attribute": "registrationDate",
+                                "errorMsg": "Please select Date!"
+                            },
+                            {
+                                "elementId": 6,
+                                "type": "multiselect",
+                                "required": false,
+                                "readOnly": false,
+                                "label": "Category",
+                                "title": "Select Category",
+                                "attribute": "category",
+                                "url": "https://xyz.com/lookup/category",
+                                "id": "categorId",
+                                "value": "categoryName",
+                                "errorMsg": "Please Select Category!",
+                                "items": [
+                                    {
+                                        "id": 1,
+                                        "value": "Fashion",
+                                        "disable": false
+                                    },
+                                    {
+                                        "id": 2,
+                                        "value": "Mobiles",
+                                        "disable": false
+                                    },
+                                    {
+                                        "id": 3,
+                                        "value": "Books",
+                                        "disable": false
+                                    },
+                                    {
+                                        "id": 4,
+                                        "value": "Groceries",
+                                        "disable": false
+                                    },
+                                    {
+                                        "id": 5,
+                                        "value": "Jewelry",
+                                        "disable": true
+                                    }
+                                ]
+                            },
+                            {
+                                "elementId": 7,
+                                "type": "table",
+                                "required": false,
+                                "readOnly": false,
+                                "columns": [
+                                    {
+                                        "id": 1,
+                                        "title": "Title",
+                                        "dataIndex": "title",
+                                        "key": "title"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "title": "Status",
+                                        "dataIndex": "status",
+                                        "key": "status"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "title": "Time",
+                                        "dataIndex": "time",
+                                        "key": "time"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "title": "Category",
+                                        "dataIndex": "category",
+                                        "key": "category"
+                                    }
+                                ],
+                                "url": "https://xyz.com/table",
+                                "data": [
+                                    {
+                                        "key": 1,
+                                        "title": "one",
+                                        "status": "two",
+                                        "time": "2022-12-11",
+                                        "category": "one,two"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "title": "one1",
+                                        "status": "two1",
+                                        "time": "2022-12-12",
+                                        "category": "one,two,three"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "itemId": 2,
+                        "title": "Contact Details"
+                    },
+                    {
+                        "itemId": 3,
+                        "title": "Review Details"
+                    }
+                ]
+            }
+        ]
     }
 ]
