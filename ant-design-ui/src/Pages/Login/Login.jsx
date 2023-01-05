@@ -1,39 +1,21 @@
-import React, { useState } from 'react';
-import { Layout } from 'antd';
-import CommonFooter from '../../common/CommonFooter';
-import CommonHeader from '../../common/CommonHeader';
-import CommonSideBar from '../../common/CommonSideBar';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-    // states management
-    const [collapsed, setCollapsed] = useState(false);
 
     return (
         <>
-            <Layout className='main'>
-                {/*********** common SideBar ********/}
-                <CommonSideBar collapsed={collapsed} />
-                <Layout className="site-layout">
-                    {/*********** common Header ********/}
-                    <CommonHeader setCollapsed={setCollapsed} collapsed={collapsed} />
-                    {/*********** common body ********/}
-
-                    <main id="main" className="main m-3">
-                        <div className="pagetitle">
-                            <h1>Login</h1>
-                            <nav>
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li className="breadcrumb-item active">Login</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </main>
-
-                    {/*********** common footer ********/}
-                    <CommonFooter />
-                </Layout>
-            </Layout>
+            <main id="main" className="main m-3">
+                <div className="pagetitle">
+                    <h1>Login</h1>
+                    <nav>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to={'/Home'}>Home</Link></li>
+                            <li className="breadcrumb-item active">Login</li>
+                        </ol>
+                    </nav>
+                </div>
+            </main>
         </>
     )
 }

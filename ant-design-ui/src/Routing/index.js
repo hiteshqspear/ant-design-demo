@@ -12,10 +12,10 @@ const RoutingComponent = () => {
         <>
             <Routes>
                 <Route path="/" element={<Navigate to="/Home"><HomePage /></Navigate>} />
-                <Route path="/Home" element={<FormPreview />} />
-                <Route path="/Category" element={<Category />} />
-                <Route path="/About" element={<AboutUs />} />
-                <Route path="/Login" element={<Login />} />
+                <Route path="/:formName" element={<FormPreview />} />
+                <Route path="/:formName" element={<Category />} />
+                <Route path="/:formName" element={<AboutUs />} />
+                <Route path="/:formName" element={<Login />} />
                 <Route path="*" element={<CommonPageNotFound />} />
             </Routes>
         </>

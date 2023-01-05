@@ -1,5 +1,6 @@
 import React from 'react'
 import { Layout, theme, Typography } from 'antd';
+import { useParams } from 'react-router-dom';
 // import FormType1 from '../Pages/Forms/FormType1';
 // import FormType2 from '../Pages/Forms/FormType2';
 // import FormType3 from '../Pages/Forms/FormType3';
@@ -7,9 +8,12 @@ import { Layout, theme, Typography } from 'antd';
 // import { useParams } from 'react-router-dom';
 import records from '../JSON/records.json'
 import CommonForm from '../Pages/Forms/CommonForm';
+import Category from '../Pages/Category/Category';
+import AboutUs from '../Pages/AboutUs/AboutUs';
+import Login from '../Pages/Login/Login';
 
 const CommonBody = () => {
-    // let { formName } = useParams();
+    let { formName } = useParams();
 
     const { Content } = Layout;
     const { Text } = Typography;
@@ -61,22 +65,26 @@ const CommonBody = () => {
 
     return (
         <>
-            <Content
-                className='border border-secondary'
-                style={{
-                    margin: '24px 16px',
-                    minHeight: 280,
-                    borderRadius: '10px',
-                    background: colorBgContainer,
-                }}
-            >
+            {formName === 'Home' && (
+                <Content
+                    className='border border-secondary'
+                    style={{
+                        margin: '24px 16px',
+                        minHeight: 280,
+                        borderRadius: '10px',
+                        background: colorBgContainer,
+                    }}
+                >
 
-                {/*********** common Forms ********/}
-                {/* <HandleForms /> */}
+                    {/*********** common Forms ********/}
+                    {/* <HandleForms /> */}
 
-                <FormHandler />
-
-            </Content>
+                    <FormHandler />
+                </Content>
+            )}
+            {formName === 'Category' && <Category />}
+            {formName === 'About' && <AboutUs />}
+            {formName === 'Login' && <Login />}
         </>
     )
 }

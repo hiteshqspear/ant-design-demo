@@ -1,27 +1,35 @@
-import { Tabs } from 'antd'
 import React from 'react'
+import { Tabs } from 'antd'
 import { isObject } from '../_helperFunctions/validationHelper';
-import CollapseAblePanel from '../components/CollapseAblePanel';
-import FormPanel from './FormPanel';
+// import CollapseAblePanel from '../components/CollapseAblePanel';
+// import FormPanel from './FormPanel';
+import CommonForm from '../Pages/Forms/CommonForm';
 
 const TabPanel = (props) => {
-    const { tabContentArr } = props;
-    let formElmTypes = ['input', 'select', 'datepicker', 'multiselect'];
+    const { tabPanelData } = props;
+    // let formElmTypes = ['input', 'select', 'datepicker', 'multiselect'];
 
-    const HandleTabChild = (elm) => {
+    const HandleTabChild = (elm, eIndex) => {
         const { tabElementArr } = elm;
-        
-        if (tabElementArr?.elements?.find(i => formElmTypes?.includes(i?.type))) {
-            return <><FormPanel formPanelData={tabElementArr?.elements} key={tabElementArr?.itemId}/></>
+
+        // if (tabElementArr?.elements?.find(i => formElmTypes?.includes(i?.type))) {
+        //     return <><FormPanel formPanelData={tabElementArr?.elements} key={tabElementArr?.itemId}/></>
+        // } else {
+        //     return tabElementArr?.elements?.map((i,index) => {
+        //         if (i?.type === 'CollapsePanel') {
+        //             return <CollapseAblePanel collapseAblePanelData={i?.items} key={index} />
+        //         } else {
+        //             return null;
+        //         }
+        //     })
+        // }
+
+        if (tabElementArr) {
+            return <><CommonForm formData={tabElementArr?.elements} key={eIndex} source={'CommonForm_TabPanel'} /></>
         } else {
-            return tabElementArr?.elements?.map((i,index) => {
-                if (i?.type === 'CollapsePanel') {
-                    return <CollapseAblePanel collapseAblePanelData={i?.items} key={index} />
-                } else {
-                    return null;
-                }
-            })
+            return null;
         }
+
     }
 
     const onChange = (key) => {
@@ -31,12 +39,12 @@ const TabPanel = (props) => {
     return (
         <>
             {
-                isObject(tabContentArr, 'title') ?
+                isObject(tabPanelData, 'title') ?
                     <Tabs
                         defaultActiveKey="1"
                         onChange={onChange}
                         items={
-                            tabContentArr && tabContentArr.map((elm) => {
+                            tabPanelData && tabPanelData.map((elm) => {
                                 return {
                                     label: elm?.title,
                                     key: elm?.itemId,
