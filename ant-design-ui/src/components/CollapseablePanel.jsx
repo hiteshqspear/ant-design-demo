@@ -49,9 +49,11 @@ const CollapseAblePanel = (props) => {
                 })} */}
                 {collapseAblePanelData && collapseAblePanelData?.map((elm, eIndex) => {
                     return (
-                        <Panel header={elm?.title} key={elm?.key}>
-                            <CommonForm formData={elm?.elements} key={eIndex} source={'CommonForm_CollapseAblePanel'} />
-                        </Panel>
+                        <React.Fragment key={eIndex}>
+                            <Panel header={elm?.title} key={elm?.key}>
+                                <CommonForm formData={elm?.elements} key={eIndex} source={'CommonForm_CollapseAblePanel'} />
+                            </Panel>
+                        </React.Fragment>
                     );
                 })}
             </Collapse>

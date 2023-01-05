@@ -16,7 +16,7 @@ const CommonForm = (props) => {
                 return (
                     <React.Fragment>
                         <div className={`${source ? '' : 'm-3'}`}>
-                            <FormPanel formPanelData={formData} />
+                            <FormPanel formPanelData={formData} key={'key'} />
                         </div>
                     </React.Fragment>
                 )

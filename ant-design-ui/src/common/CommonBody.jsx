@@ -40,7 +40,7 @@ const CommonBody = () => {
         return records && records?.map((elm, eIndex) => {
             if (elm) {
                 return (
-                    <React.Fragment>
+                    <React.Fragment key={eIndex}>
                         <div className='m-2 mb-5 border border-secondary' style={{ borderRadius: '10px' }}>
                             <Typography.Title
                                 className='w-100 text-center bg-dark'

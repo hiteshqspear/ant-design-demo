@@ -25,7 +25,11 @@ const TabPanel = (props) => {
         // }
 
         if (tabElementArr) {
-            return <><CommonForm formData={tabElementArr?.elements} key={eIndex} source={'CommonForm_TabPanel'} /></>
+            return (
+                <React.Fragment key={eIndex}>
+                    <CommonForm formData={tabElementArr?.elements} key={eIndex} source={'CommonForm_TabPanel'} />
+                </React.Fragment>
+            )
         } else {
             return null;
         }
