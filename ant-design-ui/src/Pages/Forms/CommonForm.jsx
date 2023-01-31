@@ -1,5 +1,5 @@
 import React from 'react'
-import CollapseAblePanel from '../../components/CollapseAblePanel';
+import CollapseAblePanel from '../../components/CollapseablePanel';
 import FormPanel from '../../components/FormPanel';
 import TabPanel from '../../components/TabPanel';
 
