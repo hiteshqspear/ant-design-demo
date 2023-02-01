@@ -18,48 +18,83 @@ const FormPanel = (props) => {
 
     const FormInside = () => {
         // filter input types according to our needs //
-        let newFormData = formPanelData?.filter((el) => formElmTypes?.includes(el?.type));
+        let FormDataObj = formPanelData?.filter((el) => formElmTypes?.includes(el?.type));
 
-        return newFormData && newFormData?.map((item, index) => {
+
+        return FormDataObj && FormDataObj?.map((item, index) => {
             return (
-                <React.Fragment key={index}>
-                    <Col span={12} key={index}>
-                        <Form.Item
-                            name={`${item?.attribute}`}
-                            label={`${item?.label}`}
-                            rules={[
-                                {
-                                    required: item?.required,
-                                    message: item?.errorMsg
-                                },
-                                { whitespace: true }
-                            ]}
-                        >
-                            {item?.type === 'input' && (
-                                <Input placeholder={`${item?.placeholder}`} />
-                            )}
-                            {item?.type === 'select' && (
+                <React.Fragment key={index} >
+                    <Col span={12}>
+                        {item?.type === 'input' && (
+                            <Form.Item
+                                name={`${item?.attribute}`}
+                                label={`${item?.label}`}
+                                rules={[
+                                    {
+                                        required: item?.required,
+                                        message: item?.errorMsg
+                                    },
+                                    { whitespace: true }
+                                ]}
+                            >
+                                <Input />
+                            </Form.Item>
+                        )}
+                        {item?.type === 'select' && (
+                            <Form.Item
+                                name={`${item?.attribute}`}
+                                label={`${item?.label}`}
+                                rules={[
+                                    {
+                                        required: item?.required,
+                                        message: item?.errorMsg
+                                    },
+                                    { whitespace: true }
+                                ]}
+                            >
                                 <Select mode='single' options={item?.items} onChange={handleChange} defaultValue="Select City" />
-                            )}
-                            {item?.type === 'datepicker' && (
+                            </Form.Item>
+                        )}
+                        {item?.type === 'datepicker' && (
+                            <Form.Item
+                                name={`${item?.attribute}`}
+                                label={`${item?.label}`}
+                                rules={[
+                                    {
+                                        required: item?.required,
+                                        message: item?.errorMsg
+                                    }
+                                ]}
+                            >
                                 <DatePicker />
-                            )}
-                            {item?.type === 'multiselect' && (
-                                <Select mode='multiple' options={item?.items} onChange={handleChange} defaultValue={item?.items[0]} />
-                            )}
-
-                        </Form.Item>
+                            </Form.Item>
+                        )}
+                        {item?.type === 'multiselect' && (
+                            <Form.Item
+                                name={`${item?.attribute}`}
+                                label={`${item?.label}`}
+                                rules={[
+                                    {
+                                        required: item?.required,
+                                        message: item?.errorMsg
+                                    }
+                                ]}
+                            >
+                                <Select mode='multiple' options={item?.items} onChange={handleChange} defaultValue={item?.items[0]} allowClear />
+                            </Form.Item>
+                        )}
                     </Col>
                 </React.Fragment>
             )
         })
+
     }
 
     const TableInside = () => {
         // filter input types according to our needs //
-        let newFormData = formPanelData?.filter((el) => el?.type === 'table');
+        let FormDataObj = formPanelData?.filter((el) => el?.type === 'table');
 
-        return newFormData && newFormData?.map((item) => {
+        return FormDataObj && FormDataObj?.map((item) => {
             let keys = item?.columns?.map(i => i?.id);
 
             return (
@@ -81,6 +116,7 @@ const FormPanel = (props) => {
                         className="ant-advanced-search-form"
                         onFinish={onFinish}
                     >
+
                         <Row gutter={24}>
                             <FormInside />
                         </Row>
@@ -99,6 +135,9 @@ const FormPanel = (props) => {
                                     htmlType="submit"
                                     icon={<SaveOutlined />}
                                     size={'large'}
+                                    onClick={() => {
+                                        onFinish();
+                                    }}
                                 >
                                     Save
                                 </Button>

@@ -16,7 +16,7 @@ const CommonBody = () => {
     let { formName } = useParams();
 
     const { Content } = Layout;
-    const { Text } = Typography;
+    const { Text, Title } = Typography;
     const { token: { colorBgContainer } } = theme.useToken();
 
     // const HandleForms = () => {
@@ -51,7 +51,17 @@ const CommonBody = () => {
                                     'borderTopLeftRadius': '10px',
                                 }}
                             >
-                                <Text className="text-light bg-dark">{elm?.formName}</Text>
+                                <Title
+                                    className='text-light bg-dark'
+                                    level={3}
+                                    style={{
+                                        'borderTopRightRadius': '10px',
+                                        'borderTopLeftRadius': '10px',
+                                    }}
+                                >
+                                    {elm?.formName}
+                                </Title>
+                                {/* <Text className="text-light bg-dark h5">{elm?.formName}</Text> */}
                             </Typography.Title>
                             <CommonForm formData={elm?.elements} key={eIndex} />
                         </div>
