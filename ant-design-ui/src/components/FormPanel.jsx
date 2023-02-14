@@ -1,10 +1,15 @@
 import React from 'react'
+import { useDispatch, useSelector } from "react-redux";
 import { Col, Row, Button, Form, Input, Select, DatePicker, Table } from 'antd';
 import { SaveOutlined, ClearOutlined } from '@ant-design/icons';
+import { addformData } from '../redux/action/slices';
+import moment from 'moment/moment';
 
 const FormPanel = (props) => {
     let { formPanelData } = props;
+    const dispatch = useDispatch();
     const [form] = Form.useForm();
+    const formDataRedux = useSelector((state) => state.forms);
 
     let formElmTypes = ['input', 'select', 'datepicker', 'multiselect'];
 
@@ -13,7 +18,11 @@ const FormPanel = (props) => {
     };
 
     const onFinish = (values) => {
+        if (values?.registrationDate) {
+            values.registrationDate = moment(values?.registrationDate?.$d).format('MMMM Do YYYY, h:mm:ss a');
+        }
         console.log('Received values of form: ', values);
+        dispatch(addformData(values));
     };
 
     const FormInside = () => {
@@ -106,6 +115,7 @@ const FormPanel = (props) => {
 
     return (
         <>
+            {console.log('formDataRedux log :: ', formDataRedux)}
             {formPanelData && (
                 <>
                     <Form
