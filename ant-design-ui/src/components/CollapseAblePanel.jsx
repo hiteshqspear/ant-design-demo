@@ -3,7 +3,7 @@ import { Collapse } from 'antd';
 // import TabPanel from './TabPanel';
 // import FormPanel from './FormPanel';
 import CommonForm from '../Pages/Forms/CommonForm';
-import { Col, Row, Button, Form, Input, Select, DatePicker, Table } from 'antd';
+import { Col, Row, Button } from 'antd';
 import { SaveOutlined, ClearOutlined } from '@ant-design/icons';
 
 const CollapseAblePanel = (props) => {

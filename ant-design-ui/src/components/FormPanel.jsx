@@ -20,7 +20,6 @@ const FormPanel = (props) => {
         // filter input types according to our needs //
         let FormDataObj = formPanelData?.filter((el) => formElmTypes?.includes(el?.type));
 
-
         return FormDataObj && FormDataObj?.map((item, index) => {
             return (
                 <React.Fragment key={index} >
@@ -87,7 +86,6 @@ const FormPanel = (props) => {
                 </React.Fragment>
             )
         })
-
     }
 
     const TableInside = () => {
@@ -135,9 +133,6 @@ const FormPanel = (props) => {
                                     htmlType="submit"
                                     icon={<SaveOutlined />}
                                     size={'large'}
-                                    onClick={() => {
-                                        onFinish();
-                                    }}
                                 >
                                     Save
                                 </Button>

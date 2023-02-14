@@ -165,11 +165,11 @@
                                     },
                                     {
                                         "key": 2,
-                                        "title": "This is panel Heading 1"
+                                        "title": "Order Details"
                                     },
                                     {
                                         "key": 3,
-                                        "title": "This is panel Heading 3"
+                                        "title": "Sale Details"
                                     }
                                 ]
                             }

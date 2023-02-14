@@ -16,7 +16,7 @@ const CommonBody = () => {
     let { formName } = useParams();
 
     const { Content } = Layout;
-    const { Text, Title } = Typography;
+    const { Title } = Typography;
     const { token: { colorBgContainer } } = theme.useToken();
 
     // const HandleForms = () => {
